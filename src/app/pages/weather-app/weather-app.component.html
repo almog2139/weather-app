@@ -1,0 +1,15 @@
+<div class="weather-app">
+<app-header></app-header>
+<search (onSearch)="onGetCities($event)"></search>
+<div class="cities" *ngIf="cities.length>0">
+    <ul>
+        <li *ngFor="let city of cities" (click)="onGetWeather(city)">
+            {{city.LocalizedName}}
+          </li>
+       
+
+    </ul>
+</div>
+<weater-list *ngIf="weathers" [weathers]="weathers" [cityName]="city"></weater-list>
+
+</div>

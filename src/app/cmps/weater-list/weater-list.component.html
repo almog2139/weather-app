@@ -1,0 +1,9 @@
+<div class="main-layout" *ngIf="weathers">
+    <mat-icon  *ngIf="cities && cities.hasOwnProperty(cityName)" class="margin-auto" (click)="onToggleIcon(cityName, weathers.DailyForecasts,'remove')"  class="favorit-icon">favorite</mat-icon>
+     <mat-icon *ngIf="!cities ||cities && !cities.hasOwnProperty(cityName)" (click)="onToggleIcon(cityName, weathers.DailyForecasts,'add')" class="margin-auto" class="favorit-icon">favorite_border</mat-icon> 
+    <h3>{{weathers?.Headline.Text}}</h3>
+    <div class="card-continer">
+       <weather-preview [day]="weather" *ngFor="let weather of weathers.DailyForecasts;let i = index"></weather-preview>
+        
+    </div>
+</div>

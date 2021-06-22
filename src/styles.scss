@@ -1,1 +1,121 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$job-interview-primary: mat-palette($mat-indigo);
+$job-interview-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$job-interview-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$job-interview-theme: mat-light-theme((
+  color: (
+    primary: $job-interview-primary,
+    accent: $job-interview-accent,
+    warn: $job-interview-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($job-interview-theme);
+
+.main-layout {
+  // max-width: 1500px;
+  margin: auto;
+  display: grid;
+  grid-template-columns:
+  minmax(0.6rem, 1fr)
+  minmax(auto, 460px)
+  minmax(0.6rem, 1fr);
+
+  
+  & > * {
+    grid-column: 2;
+  }
+  @media (min-width: 960px) {
+    
+    grid-template-columns:
+        minmax(0.6rem, 1fr)
+        minmax(auto, 960px)
+        minmax(0.6rem, 1fr);
+  }
+
+  @media (min-width: 460px) {
+     
+      grid-template-columns:
+          minmax(0.6rem, 1fr)
+          minmax(auto, 460px)
+          minmax(0.6rem, 1fr);
+  }
+
+  @media (min-width: 720px) {
+    
+      grid-template-columns:
+          minmax(0.6rem, 1fr)
+          minmax(auto, 720px)
+          minmax(0.6rem, 1fr);
+  }
+
+  @media (min-width: 960px) {
+      
+      grid-template-columns:
+          minmax(0.1rem, 1fr)
+          minmax(auto, 960px)
+          minmax(0.1rem, 1fr);
+  }
+}
+
+
+// Main Header Layout
+
+.card-continer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+  align-content: center;
+  justify-items: center;
+  margin: auto;
+  width: 100%;
+}
+.card-grid {
+  width: 250px;
+  text-align: center;
+  margin: auto;
+  color: black;
+  background:#E6DFD5;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  div{
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  img {
+      width: 50%;
+      object-fit: contain;
+      height: 120px;
+  }
+}
+html{
+    background: linear-gradient(to top, #C6A696, #b6d5eb);
+    height: 100vh;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

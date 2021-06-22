@@ -1,0 +1,7 @@
+<article class="card-grid">
+    <div [style]="{'background-color': '#D8D9DB'}"><img src="https://developer.accuweather.com/sites/default/files/{{dayIcon}}-s.png "/></div> 
+    <!-- <h3>{moment(day.Date).format('dd mm yyyy')}</h3>  -->
+   <p>{{day.Date.IconPhrase}}</p>
+    <p>{{day.Temperature.Maximum.Value}} <span>{{day.Temperature.Maximum.Unit}} </span></p>
+    <p class="read-more"><mat-icon>info</mat-icon> Read More</p> 
+</article>

@@ -1,0 +1,22 @@
+.weather-app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .cities {
+     display: flex;
+     justify-content: center;
+    text-align: center;
+    background-color: #D0DAE6;
+    border-radius: 2em;
+    width: 300px;
+    
+    ul{
+        list-style: none;
+        li{
+            cursor: pointer;
+        }
+    }
+    }
+}
